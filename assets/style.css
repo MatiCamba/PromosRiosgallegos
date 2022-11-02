@@ -1,0 +1,370 @@
+:root{
+    --background-dark: #2d3548;
+    --text-light: rgba(255,255,255,0.6);
+    --text-lighter: rgba(255,255,255,0.9);
+    --spacing-s: 8px;
+    --spacing-m: 16px;
+    --spacing-l: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 64px;
+    --width-container: 1200px;
+}
+
+
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+    font-size: 62.5%; /* 1REM = 10px */
+    font-family: 'Noto Sans', sans-serif !important;
+    font-size: 14px;
+}
+
+body{
+    height: 100%;
+    background-color: #fafafa;
+}
+
+
+a {
+    text-decoration: none !important;
+    color: #333 !important;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/** NavBar **/
+.navbar{
+    /* position: fixed !important; */
+    width: 100%;
+    z-index: 1000!important;
+}
+
+.nav-link{
+    font-size: 1.5rem !important;
+}
+
+.Logo__Naranja{
+    height: 10rem;
+    width: auto;
+}
+
+.mb-2{
+    margin-top: 1.5rem;
+}
+
+
+/** Boton Buscar **/
+
+.btn-outline-success {
+    --bs-btn-color: #50007f !important;
+    --bs-btn-border-color: #50007f !important;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #50007f !important;
+    --bs-btn-hover-border-color: #50007f !important;
+    --bs-btn-focus-shadow-rgb: 25,135,84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #50007f;
+    --bs-btn-active-border-color: #50007f;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #50007f;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #50007f;
+    --bs-gradient: none;
+    font-weight: 500 !important;
+    font-size: 1.5rem !important;
+}
+
+/** Tarjetas **/
+
+
+h1 {
+    color: #333;
+    font-family: 'Noto Sans';
+    font-weight: 700 !important;
+    font-size: 24px;
+    line-height: 28px;
+    position: relative;
+    text-align: center;
+    padding: 30px 0;
+}
+
+h2 {
+    font-family: 'Noto Sans';
+}
+
+h3 {
+    font-family: 'Noto Sans';
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400 !important;
+    margin-bottom: 16px;
+}
+
+
+
+.hero-section{
+    align-items: flex-start;
+    display: flex;
+    min-height: 100%;
+    justify-content: center;
+    padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+
+/** Carrusel **/
+
+.carusel{
+    width:100%;
+}
+
+@media (min-width: 768px){ 
+    .carusel{
+        width:80%;
+        margin: 0 auto;
+    }
+}
+
+/** Tarjetitas **/
+
+.card-grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: var(--spacing-l);
+    grid-row-gap: var(--spacing-l);
+    max-width: var(--width-container);
+    width: 100%;
+}
+
+@media(min-width: 540px){
+    .card-grid{
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media(min-width: 960px){
+    .card-grid{
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+.card{
+    list-style: none;
+    position: relative;
+    border: none !important;
+}
+
+.card:before{
+    content: '';
+    display: block;
+    padding-bottom: 150%;
+    width: 100%;
+}
+
+.card__background{
+    background-size: cover;
+    max-width: 100%;
+    background-position: center;
+    border-radius: var(--spacing-l);
+    bottom: 0;
+    filter: brightness(0.75) saturate(1.2) contrast(0.85);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: center;
+    transform: scale(1) translateZ(0);
+    transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+    transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+    filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+    left: 0;
+    padding: var(--spacing-l);
+    position: absolute;
+    top: 0;
+}
+
+.card__category{
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-s);
+    text-transform: uppercase;
+}
+
+.card__heading{
+    color: var(--text-lighter);
+    font-size: 1.9rem;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+    line-height: 1.4;
+    word-spacing: 100vw;
+}
+
+/* tarjetas Promociones*/
+
+.titulo2{
+    margin: 2rem;
+    font-weight: 700;
+    margin: 2rem;
+}
+
+.Grid__Tarjetas{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem;
+}
+
+@media (min-width: 768px){ 
+    .Grid__Tarjetas{
+        grid-template-rows: none;
+        grid-template-columns: repeat(3, 1fr);
+                
+    }
+}
+
+.tarjeta__promo{
+    border: 1px solid #e8e8e8;
+    border-radius: 12%;
+    box-shadow: 0 2px 4px #00000014;
+}
+
+.card-img-top{
+    max-height: 15rem;
+    max-width: 25rem;
+    padding: 2rem;
+    position: center;
+}
+
+.titulo__comercio{
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+
+.card-text{
+    padding: 0 1rem 1rem 1rem;
+}
+
+p span.plan {
+    color:#fe5000;
+    font-size: 3rem;
+}
+
+p span.cuotas {
+    color:#50007f;
+    font-size: 2rem;
+}
+
+
+/** Footer **/
+
+.site-footer {
+    border-top: 1px solid #e1e1e1;
+    margin-top: 5rem;
+    padding-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.Logo__Naranja__footer {
+    height: 7rem;
+    width: auto;
+}
+
+h3.titulos__footer {
+    font-family: 'Noto Sans';
+    font-size: 16px !important;
+    line-height: 20px !important;
+    font-weight: 700 !important;
+    margin-bottom: 25px;
+    color: rgba(51, 51, 51, 0.9);
+    margin-bottom: 16px !important;
+}
+
+@media (min-width: 768px){ 
+    .site-footer{
+        margin-inline: 4rem;
+    }
+    
+    .site-footer h3 {
+        text-align: left;
+    }
+
+    .grid-footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        justify-items: center;
+    }
+}
+
+.redes{
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+.fa-solid, .fa-brands{
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.grid-footer > div{
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px){ 
+    .grid-footer > div{
+        margin-bottom: 0;
+    }
+}
+
+
+.footer-menu a {
+    display: block;
+    text-align: center;
+    height: 40px;
+    cursor: pointer;
+    font-family: 'Noto Sans';
+    font-weight: 600 !important;
+}
+
+@media (min-width: 768px){ 
+    .footer-menu a {
+        text-align: left;
+    }
+}
+
+.descarga{
+    width: 136px;
+    height: 44px;
+    margin: 5px;
+}
+
+.apps{
+    display:flex;
+}
+
+.copyright {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 24px;
+}
